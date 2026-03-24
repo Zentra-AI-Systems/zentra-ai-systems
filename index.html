@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENTRA AI | Elite Security Ecosystems — Miami</title>
+    <meta name="description" content="ZENTRA AI delivers military-grade AI surveillance and low-voltage security engineering for Miami's most valuable assets. Elite residential, high-end retail, and commercial protection.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zentra: {
+                            black: '#050505',
+                            dark: '#0a0a0a',
+                            card: '#0d0d0d',
+                            border: 'rgba(255,255,255,0.06)',
+                        },
+                        gold: {
+                            50: '#FBF5B7',
+                            100: '#FCF6BA',
+                            200: '#F0E68C',
+                            300: '#DAA520',
+                            400: '#BF953F',
+                            500: '#B38728',
+                            600: '#AA771C',
+                            700: '#886211',
+                            800: '#5C4209',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'scan': 'scan 3s ease-in-out infinite',
+                        'fade-up': 'fadeUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'width-grow': 'widthGrow 1.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        scan: {
+                            '0%, 100%': { opacity: '0.3', transform: 'translateY(0)' },
+                            '50%': { opacity: '1', transform: 'translateY(10px)' },
+                        },
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        widthGrow: {
+                            '0%': { width: '0%' },
+                            '100%': { width: '100%' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #fff;
+        }
+
+        /* Gold gradient text */
+        .gold-text {
+            background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Gold gradient border */
+        .gold-border {
+            border-image: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-heavy {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Gold gradient button */
+        .btn-gold {
+            background: linear-gradient(135deg, #BF953F, #AA771C, #B38728);
+            color: #050505;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #FCF6BA, #BF953F, #FBF5B7);
+            box-shadow: 0 0 40px rgba(191, 149, 63, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Arsenal card hover effect */
+        .arsenal-card {
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        .arsenal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #BF953F, transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .arsenal-card:hover::before {
+            opacity: 1;
+        }
+        .arsenal-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(191, 149, 63, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(191, 149, 63, 0.05);
+        }
+
+        /* Animated grid lines background */
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Scroll-triggered animation classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scan line effect */
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(191,149,63,0.4), transparent);
+            animation: scanMove 4s ease-in-out infinite;
+        }
+        @keyframes scanMove {
+            0%, 100% { top: 20%; opacity: 0; }
+            50% { top: 80%; opacity: 1; }
+        }
+
+        /* Form inputs */
+        .form-input {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            border-color: rgba(191, 149, 63, 0.5);
+            box-shadow: 0 0 20px rgba(191, 149, 63, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Stat counter */
+        .stat-number {
+            background: linear-gradient(180deg, #ffffff 0%, #666666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #BF953F; }
+
+        /* Hero gradient overlay */
+        .hero-gradient {
+            background: radial-gradient(ellipse at center, transparent 0%, #050505 70%),
+                        linear-gradient(180deg, transparent 60%, #050505 100%);
+        }
+
+        /* Ambient glow */
+        .glow-gold {
+            box-shadow: 0 0 60px rgba(191, 149, 63, 0.15), 0 0 120px rgba(191, 149, 63, 0.05);
+        }
+
+        /* Select dropdown fix for dark mode */
+        select option {
+            background: #0d0d0d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NAVIGATION -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500" style="background: transparent;">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 border border-gold-400 flex items-center justify-center">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-tight">ZENTRA</span>
+                    <span class="text-xl font-black tracking-tight gold-text ml-1">AI</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10 text-[11px] font-semibold uppercase tracking-[0.25em] text-gray-500">
+                <a href="#threat" class="hover:text-white transition-colors duration-300">The Threat</a>
+                <a href="#arsenal" class="hover:text-white transition-colors duration-300">Arsenal</a>
+                <a href="#technology" class="hover:text-white transition-colors duration-300">Technology</a>
+                <a href="#standard" class="hover:text-white transition-colors duration-300">The Standard</a>
+                <a href="#vault" class="hover:text-white transition-colors duration-300">Contact</a>
+            </div>
+            <a href="#vault" class="btn-gold px-8 py-3 text-[11px] font-bold uppercase tracking-[0.2em]">Request Audit</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 1: THE HERO -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 bg-zentra-black"></div>
+        <div class="absolute inset-0 grid-bg opacity-40"></div>
+        <div class="absolute inset-0 hero-gradient"></div>
+
+        <!-- Floating geometric accents -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 border border-gold-400/10 rotate-45 animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 border border-white/5 rotate-12 animate-float"></div>
+        <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-gold-400 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-1/3 left-1/4 w-1 h-1 bg-gold-400 rounded-full animate-pulse-slow"></div>
+
+        <!-- Scan line -->
+        <div class="scan-line"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+            <!-- Top tag -->
+            <div class="inline-flex items-center gap-3 glass px-6 py-2 mb-10 animate-fade-in">
+                <span class="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></span>
+                <span class="text-[10px] md:text-xs font-semibold tracking-[0.4em] uppercase text-gray-400">Miami · Palm Beach · Fort Lauderdale · Coral Gables</span>
+            </div>
+
+            <!-- Main headline -->
+            <h1 class="text-7xl md:text-[10rem] lg:text-[12rem] font-black tracking-tighter leading-[0.85] mb-8">
+                <span class="block">SECURE</span>
+                <span class="block gold-text">EVERYTHING.</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="max-w-3xl mx-auto text-gray-400 text-lg md:text-2xl font-light leading-relaxed mb-4">
+                Protecting Miami's most valuable estates, storefronts, and assets with
+                <span class="text-white font-medium">military-grade AI surveillance</span>
+                and low-voltage engineering.
+            </p>
+            <p class="text-gray-600 text-sm md:text-base font-light tracking-wide mb-14">
+                Private security infrastructure for those who refuse to be vulnerable.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="#vault" class="btn-gold px-14 py-5 text-sm font-bold uppercase tracking-[0.25em] w-full sm:w-auto text-center">
+                    Request Confidential Audit
+                </a>
+                <a href="#arsenal" class="group border border-white/20 px-14 py-5 text-sm font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-zentra-black transition-all duration-500 w-full sm:w-auto text-center">
+                    Explore Ecosystems
+                    <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40">
+                <span class="text-[9px] font-semibold tracking-[0.4em] uppercase">Scroll</span>
+                <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 2: THE THREAT (Problem Agitation) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="threat" class="relative py-32 md:py-44 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-zentra-black"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto">
+            <!-- Section label -->
+            <div class="flex items-center gap-4 mb-16 reveal">
+                <div class="w-12 h-px bg-gold-400"></div>
+                <span class="text-[10px] font-bold tracking-[0.5em] uppercase text-gold-400">The Threat</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Left: Statement -->
+                <div class="reveal">
+                    <h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.95] mb-8">
+                        Standard cameras
+                        <span class="text-gray-600 block">don't stop</span>
+                        organized theft.
+                    </h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-transparent mb-8"></div>
+                    <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
+                        Miami-Dade County reports over <span class="text-white font-semibold">$380M in property crimes annually</span>. Most "security systems" are nothing more than passive witnesses — recording crimes as they happen, not preventing them.
+                    </p>
+                </div>
+
+                <!-- Right: Impact cards -->
+                <div class="space-y-4 reveal">
+                    <div class="glass p-8 group hover:border-red-500/20 transition-all duration-500">
+                        <div class="flex items-start gap-5">
+                            <span class="text-red-500 text-3xl font-light mt-1">✕</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Traditional CCTV</h4>
+                                <p class="text-gray-500 font-light">Records footage after the crime. Provides evidence, not protection. Average police response: 11+ minutes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass p-8 group hover:border-red-500/20 transition-all duration-500">
+                        <div class="flex items-start gap-5">
+                            <span class="text-red-500 text-3xl font-light mt-1">✕</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Basic Alarm Systems</h4>
+                                <p class="text-gray-500 font-light">Alert after breach has occurred. No intelligent threat classification. High false-alarm rates erode trust.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass p-8 border-gold-400/20 glow-gold">
+                        <div class="flex items-start gap-5">
+                            <span class="gold-text text-3xl font-light mt-1">◆</span>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 gold-text">ZENTRA AI Active Prevention</h4>
+                                <p class="text-gray-400 font-light">Machine-learning threat recognition intervenes <span class="text-white font-semibold">before</span> the breach. Real-time deterrence, zero passive observation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom quote -->
+            <div class="mt-24 pt-16 border-t border-white/5 text-center reveal">
+                <blockquote class="text-3xl md:text-5xl font-black tracking-tight leading-tight italic max-w-4xl mx-auto">
+                    "We don't watch crimes happen.<br>
+                    <span class="gold-text">We prevent them.</span>"
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 3: THE ARSENAL (Services) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="arsenal" class="relative py-32 md:py-44 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-zentra-dark grid-bg"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <!-- Section header -->
+            <div class="text-center mb-20 reveal">
+                <div class="inline-flex items-center gap-4 mb-8">
+                    <div class="w-12 h-px bg-gold-400"></div>
+                    <span class="text-[10px] font-bold tracking-[0.5em] uppercase text-gold-400">The Arsenal</span>
+                    <div class="w-12 h-px bg-gold-400"></div>
+                </div>
+                <h2 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                    Security<br><span class="gold-text">Ecosystems</span>
+                </h2>
+                <p class="text-gray-500 text-lg font-light max-w-2xl mx-auto">
+                    Three verticals. One standard: impenetrable.
+                </p>
+            </div>
+
+            <!-- Arsenal Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Card 1: Elite Residential -->
+                <div class="arsenal-card glass p-10 md:p-12 reveal group cursor-default">
+                    <div class="flex items-center justify-between mb-8">
+                        <span class="text-gold-400 text-6xl font-extralight">01</span>
+                        <div class="w-12 h-12 border border-gold-400/30 flex items-center justify-center group-hover:border-gold-400 transition-colors duration-500">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-black uppercase tracking-tight mb-2">Elite</h3>
+                    <h3 class="text-3xl font-black uppercase tracking-tight mb-6 gold-text">Residential</h3>
+                    <p class="text-gray-500 font-light leading-relaxed mb-8">
+                        Total perimeter sovereignty for luxury estates. From Star Island to Coral Gables, we engineer invisible fortresses.
+                    </p>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Smart Home Integration & Automation
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Biometric Access Control Systems
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            AI-Powered Perimeter Defense
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            360° Thermal & Night Vision Coverage
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Panic Room & Safe Room Engineering
+                        </li>
+                    </ul>
+                    <div class="mt-10 pt-8 border-t border-white/5">
+                        <a href="#vault" class="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-400 hover:text-gold-100 transition-colors duration-300 group/link flex items-center gap-2">
+                            Configure Estate Plan
+                            <span class="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: High-End Retail -->
+                <div class="arsenal-card glass p-10 md:p-12 reveal group cursor-default" style="transition-delay: 0.1s;">
+                    <div class="flex items-center justify-between mb-8">
+                        <span class="text-gold-400 text-6xl font-extralight">02</span>
+                        <div class="w-12 h-12 border border-gold-400/30 flex items-center justify-center group-hover:border-gold-400 transition-colors duration-500">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <path d="M16 10a4 4 0 01-8 0"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-black uppercase tracking-tight mb-2">High-End</h3>
+                    <h3 class="text-3xl font-black uppercase tracking-tight mb-6 gold-text">Retail</h3>
+                    <p class="text-gray-500 font-light leading-relaxed mb-8">
+                        Specialized defense for jewelry boutiques, luxury retail, and high-value showrooms across South Florida's design districts.
+                    </p>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Jewelry Store Vault Protection
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Active Deterrence & Strobe Systems
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Facial Recognition & Threat Flagging
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Smash-and-Grab Countermeasures
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Real-Time Inventory Loss Prevention
+                        </li>
+                    </ul>
+                    <div class="mt-10 pt-8 border-t border-white/5">
+                        <a href="#vault" class="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-400 hover:text-gold-100 transition-colors duration-300 group/link flex items-center gap-2">
+                            Secure Your Storefront
+                            <span class="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Commercial & Logistics -->
+                <div class="arsenal-card glass p-10 md:p-12 reveal group cursor-default" style="transition-delay: 0.2s;">
+                    <div class="flex items-center justify-between mb-8">
+                        <span class="text-gold-400 text-6xl font-extralight">03</span>
+                        <div class="w-12 h-12 border border-gold-400/30 flex items-center justify-center group-hover:border-gold-400 transition-colors duration-500">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <rect x="1" y="3" width="15" height="13"/>
+                                <polygon points="16 8 20 3 20 16 16 16"/>
+                                <path d="M1 16h19v3H1z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-black uppercase tracking-tight mb-2">Commercial</h3>
+                    <h3 class="text-3xl font-black uppercase tracking-tight mb-6 gold-text">& Logistics</h3>
+                    <p class="text-gray-500 font-light leading-relaxed mb-8">
+                        Industrial-grade surveillance and access control for warehouses, distribution centers, and commercial properties.
+                    </p>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Warehouse Perimeter & Zone Monitoring
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Multi-Point Access Control Systems
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            License Plate Recognition (LPR)
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Loading Dock & Cargo Surveillance
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <span class="w-1.5 h-1.5 bg-gold-400 rounded-full flex-shrink-0"></span>
+                            Employee Badge & Biometric Tracking
+                        </li>
+                    </ul>
+                    <div class="mt-10 pt-8 border-t border-white/5">
+                        <a href="#vault" class="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-400 hover:text-gold-100 transition-colors duration-300 group/link flex items-center gap-2">
+                            Fortify Operations
+                            <span class="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 4: THE ZENTRA BRAIN (Technology) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="technology" class="relative py-32 md:py-44 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-zentra-black"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent"></div>
+
+        <!-- Ambient glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-400/5 rounded-full blur-[120px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <!-- Section header -->
+            <div class="text-center mb-20 reveal">
+                <div class="inline-flex items-center gap-4 mb-8">
+                    <div class="w-12 h-px bg-gold-400"></div>
+                    <span class="text-[10px] font-bold tracking-[0.5em] uppercase text-gold-400">The Zentra Brain</span>
+                    <div class="w-12 h-px bg-gold-400"></div>
+                </div>
+                <h2 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                    Intelligence<br><span class="gold-text">Architecture</span>
+                </h2>
+                <p class="text-gray-500 text-lg font-light max-w-2xl mx-auto">
+                    The convergence of low-voltage engineering precision and neural network threat analysis.
+                </p>
+            </div>
+
+            <!-- Technology grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                <!-- Machine Learning -->
+                <div class="glass-heavy p-10 md:p-14 reveal group">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 border border-gold-400/30 flex items-center justify-center group-hover:border-gold-400 transition-all duration-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight">Machine Learning Core</h3>
+                    </div>
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Our proprietary neural networks are trained on millions of surveillance data points to distinguish between routine activity and genuine threats with <span class="text-white font-medium">99.7% classification accuracy</span>.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Behavioral pattern analysis
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Anomaly detection algorithms
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Continuous model retraining
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instant Threat Recognition -->
+                <div class="glass-heavy p-10 md:p-14 reveal group">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 border border-gold-400/30 flex items-center justify-center group-hover:border-gold-400 transition-all duration-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight">Instant Threat Recognition</h3>
+                    </div>
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Sub-200ms threat identification from camera feed to automated response. Our edge-processing hardware eliminates cloud latency — <span class="text-white font-medium">decisions are made on-site, in real time</span>.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Edge computing architecture
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Zero-latency response protocols
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Automated deterrence triggers
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Low-Voltage Engineering -->
+                <div class="glass-heavy p-10 md:p-14 reveal group">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 border border-gold-400/30 flex items-center justify-center group-hover:border-gold-400 transition-all duration-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight">Low-Voltage Engineering</h3>
+                    </div>
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Every wire, every conduit, every termination is engineered to commercial-grade specifications. <span class="text-white font-medium">Clean infrastructure is reliable infrastructure</span> — no shortcuts, no compromises.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Structured cabling systems
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Fiber optic backbone networks
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Redundant power & failover
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unified Command -->
+                <div class="glass-heavy p-10 md:p-14 reveal group">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 border border-gold-400/30 flex items-center justify-center group-hover:border-gold-400 transition-all duration-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold uppercase tracking-tight">Unified Command Dashboard</h3>
+                    </div>
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Monitor every camera, sensor, and access point from a single encrypted interface. <span class="text-white font-medium">Full situational awareness from anywhere on Earth</span> — desktop, tablet, or secure mobile.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Military-grade AES-256 encryption
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Multi-site management
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-500">
+                            <span class="w-1 h-1 bg-gold-400 rounded-full"></span>
+                            Secure remote access protocols
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech flow visualization -->
+            <div class="glass p-10 md:p-14 text-center reveal">
+                <p class="text-[10px] font-bold tracking-[0.5em] uppercase text-gold-400 mb-8">System Architecture Flow</p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-sm">
+                    <div class="glass px-6 py-4 font-semibold uppercase tracking-wider text-xs">Camera Array</div>
+                    <span class="text-gold-400 text-xl hidden md:block">→</span>
+                    <span class="text-gold-400 text-xl block md:hidden">↓</span>
+                    <div class="glass px-6 py-4 font-semibold uppercase tracking-wider text-xs">Edge Processor</div>
+                    <span class="text-gold-400 text-xl hidden md:block">→</span>
+                    <span class="text-gold-400 text-xl block md:hidden">↓</span>
+                    <div class="glass px-6 py-4 font-semibold uppercase tracking-wider text-xs border-gold-400/30 gold-text">AI Analysis</div>
+                    <span class="text-gold-400 text-xl hidden md:block">→</span>
+                    <span class="text-gold-400 text-xl block md:hidden">↓</span>
+                    <div class="glass px-6 py-4 font-semibold uppercase tracking-wider text-xs">Threat Response</div>
+                    <span class="text-gold-400 text-xl hidden md:block">→</span>
+                    <span class="text-gold-400 text-xl block md:hidden">↓</span>
+                    <div class="glass px-6 py-4 font-semibold uppercase tracking-wider text-xs">Command Center</div>
+                </div>
+                <p class="text-gray-600 text-xs mt-6">End-to-end latency: &lt;200ms · Encrypted at every node · Zero cloud dependency</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 5: THE STANDARD (About / Authority) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="standard" class="relative py-32 md:py-44 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-zentra-dark"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <!-- Section header -->
+            <div class="text-center mb-20 reveal">
+                <div class="inline-flex items-center gap-4 mb-8">
+                    <div class="w-12 h-px bg-gold-400"></div>
+                    <span class="text-[10px] font-bold tracking-[0.5em] uppercase text-gold-400">The Standard</span>
+                    <div class="w-12 h-px bg-gold-400"></div>
+                </div>
+                <h2 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                    Built on<br><span class="gold-text">Excellence</span>
+                </h2>
+                <p class="text-gray-500 text-lg font-light max-w-2xl mx-auto">
+                    ZENTRA AI is not a vendor. We are a strategic security partner entrusted by Miami's most discerning clients.
+                </p>
+            </div>
+
+            <!-- Stats grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 reveal">
+                <div class="glass p-8 text-center group hover:border-gold-400/20 transition-all duration-500">
+                    <div class="stat-number text-5xl md:text-6xl font-black mb-3">500+</div>
+                    <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500">Systems Deployed</p>
+                </div>
+                <div class="glass p-8 text-center group hover:border-gold-400/20 transition-all duration-500">
+                    <div class="stat-number text-5xl md:text-6xl font-black mb-3">99.9%</div>
+                    <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500">System Uptime</p>
+                </div>
+                <div class="glass p-8 text-center group hover:border-gold-400/20 transition-all duration-500">
+                    <div class="stat-number text-5xl md:text-6xl font-black mb-3">&lt;200</div>
+                    <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500">MS Response Time</p>
+                </div>
+                <div class="glass p-8 text-center group hover:border-gold-400/20 transition-all duration-500">
+                    <div class="stat-number text-5xl md:text-6xl font-black mb-3">24/7</div>
+                    <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500">Monitoring Active</p>
+                </div>
+            </div>
+
+            <!-- Trust pillars -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+                <div class="glass p-10 text-center group hover:border-gold-400/10 transition-all duration-500">
+                    <div class="w-16 h-16 mx-auto mb-6 border border-gold-400/20 flex items-center justify-center group-hover:border-gold-400/50 transition-all duration-500">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold uppercase tracking-wide mb-3">Licensed & Insured</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        Fully licensed low-voltage contractor in the State of Florida. Comprehensive liability and professional indemnity coverage on every project.
+                    </p>
+                </div>
+                <div class="glass p-10 text-center group hover:border-gold-400/10 transition-all duration-500">
+                    <div class="w-16 h-16 mx-auto mb-6 border border-gold-400/20 flex items-center justify-center group-hover:border-gold-400/50 transition-all duration-500">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0110 0v4"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold uppercase tracking-wide mb-3">NDA Protected</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        Every client engagement is covered by a binding non-disclosure agreement. Your security architecture is classified information — always.
+                    </p>
+                </div>
+                <div class="glass p-10 text-center group hover:border-gold-400/10 transition-all duration-500">
+                    <div class="w-16 h-16 mx-auto mb-6 border border-gold-400/20 flex items-center justify-center group-hover:border-gold-400/50 transition-all duration-500">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold uppercase tracking-wide mb-3">Proven Track Record</h4>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        Trusted by high-net-worth families, luxury retailers, and commercial operators across Miami-Dade, Broward, and Palm Beach counties.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 6: THE VAULT (Lead Capture Form) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section id="vault" class="relative py-32 md:py-44 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-zentra-black"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent"></div>
+
+        <!-- Ambient glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-400/3 rounded-full blur-[100px]"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <div class="glass-heavy p-10 md:p-20 relative overflow-hidden">
+                <!-- Decorative corners -->
+                <div class="absolute top-0 left-0 w-16 h-16 border-t border-l border-gold-400/30"></div>
+                <div class="absolute top-0 right-0 w-16 h-16 border-t border-r border-gold-400/30"></div>
+                <div class="absolute bottom-0 left-0 w-16 h-16 border-b border-l border-gold-400/30"></div>
+                <div class="absolute bottom-0 right-0 w-16 h-16 border-b border-r border-gold-400/30"></div>
+
+                <!-- Form header -->
+                <div class="text-center mb-14 reveal">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <span class="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></span>
+                        <span class="text-[10px] font-bold tracking-[0.5em] uppercase text-gold-400">Secure Channel</span>
+                        <span class="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-4">
+                        Enter <span class="gold-text">The Vault</span>
+                    </h2>
+                    <p class="text-gray-500 font-light max-w-xl mx-auto">
+                        Request a confidential security audit. Our team will analyze your location and deliver a custom ZENTRA AI protection blueprint within 48 hours.
+                    </p>
+                </div>
+
+                <!-- Form -->
+                <form name="zentra-audit" method="POST" data-netlify="true" class="space-y-6 reveal">
+                    <input type="hidden" name="form-name" value="zentra-audit">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500 mb-3">Full Name</label>
+                            <input type="text" name="full-name" required placeholder="Enter your full name"
+                                class="form-input w-full px-5 py-4 text-white text-sm outline-none rounded-none">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500 mb-3">Phone Number</label>
+                            <input type="tel" name="phone" required placeholder="+1 (___) ___-____"
+                                class="form-input w-full px-5 py-4 text-white text-sm outline-none rounded-none">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500 mb-3">Asset Type</label>
+                            <select name="asset-type" required
+                                class="form-input w-full px-5 py-4 text-gray-400 text-sm outline-none rounded-none appearance-none cursor-pointer"
+                                style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%228%22%20viewBox%3D%220%200%2012%208%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1%201L6%206L11%201%22%20stroke%3D%22%23BF953F%22%20stroke-width%3D%221.5%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 16px center;">
+                                <option value="" disabled selected>Select asset type</option>
+                                <option value="estate">Estate / Residential Property</option>
+                                <option value="jewelry">Jewelry Store / Luxury Retail</option>
+                                <option value="warehouse">Warehouse / Commercial Facility</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500 mb-3">Location (Zip Code)</label>
+                            <input type="text" name="zip-code" required placeholder="e.g. 33139" maxlength="10"
+                                class="form-input w-full px-5 py-4 text-white text-sm outline-none rounded-none">
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="pt-6">
+                        <button type="submit"
+                            class="btn-gold w-full py-6 text-sm font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0110 0v4"/>
+                            </svg>
+                            Initiate Security Protocol
+                        </button>
+                    </div>
+
+                    <!-- Trust badges -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 text-[9px] font-semibold tracking-[0.3em] uppercase text-gray-600">
+                        <span class="flex items-center gap-2">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            AES-256 Encrypted
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0110 0v4"/>
+                            </svg>
+                            NDA Protected
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            48hr Response
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 7: COMPREHENSIVE FOOTER -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <footer class="relative pt-24 pb-12 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-zentra-dark"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <!-- Footer top -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 border border-gold-400 flex items-center justify-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-xl font-black tracking-tight">ZENTRA</span>
+                            <span class="text-xl font-black tracking-tight gold-text ml-1">AI</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm font-light leading-relaxed mb-6">
+                        Elite security ecosystems for Miami's most valuable assets. AI-integrated low-voltage engineering.
+                    </p>
+                    <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-700">
+                        FL Licensed Low-Voltage Contractor
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-[10px] font-bold tracking-[0.4em] uppercase text-gold-400 mb-6">Ecosystems</h4>
+                    <ul class="space-y-3 text-sm text-gray-500 font-light">
+                        <li><a href="#arsenal" class="hover:text-white transition-colors duration-300">Elite Residential</a></li>
+                        <li><a href="#arsenal" class="hover:text-white transition-colors duration-300">High-End Retail</a></li>
+                        <li><a href="#arsenal" class="hover:text-white transition-colors duration-300">Commercial & Logistics</a></li>
+                        <li><a href="#technology" class="hover:text-white transition-colors duration-300">AI Surveillance</a></li>
+                        <li><a href="#technology" class="hover:text-white transition-colors duration-300">Access Control</a></li>
+                        <li><a href="#technology" class="hover:text-white transition-colors duration-300">Low-Voltage Engineering</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-[10px] font-bold tracking-[0.4em] uppercase text-gold-400 mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm text-gray-500 font-light">
+                        <li><a href="#standard" class="hover:text-white transition-colors duration-300">About ZENTRA AI</a></li>
+                        <li><a href="#standard" class="hover:text-white transition-colors duration-300">Our Standard</a></li>
+                        <li><a href="#vault" class="hover:text-white transition-colors duration-300">Request an Audit</a></li>
+                        <li><a href="#privacy" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#privacy" class="hover:text-white transition-colors duration-300">Data Protection</a></li>
+                        <li><a href="#privacy" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-[10px] font-bold tracking-[0.4em] uppercase text-gold-400 mb-6">Secure Contact</h4>
+                    <ul class="space-y-4 text-sm text-gray-500 font-light">
+                        <li class="flex items-center gap-3">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Miami, Florida
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                            By Appointment Only
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#BF953F" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            24/7 Monitoring Active
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="h-px bg-gradient-to-r from-transparent via-white/5 to-transparent mb-12"></div>
+
+            <!-- Privacy Policy & Data Protection -->
+            <div id="privacy" class="mb-16">
+                <h4 class="text-[10px] font-bold tracking-[0.4em] uppercase text-gold-400 mb-8 text-center">Privacy Policy & Data Protection</h4>
+                <div class="glass p-8 md:p-12 text-[11px] text-gray-500 leading-relaxed space-y-6">
+                    <div>
+                        <h5 class="text-white font-bold text-xs uppercase tracking-wide mb-2">1. Data Collection & Purpose</h5>
+                        <p>ZENTRA AI Group ("Zentra," "we," "our") collects personal information strictly for the purpose of delivering security consultation, system design, installation, and monitoring services. Information collected through our website contact forms — including name, phone number, email, asset type, and location data — is used exclusively to initiate and manage security engagements. We do not collect data from minors under the age of 18.</p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold text-xs uppercase tracking-wide mb-2">2. Surveillance Data Handling</h5>
+                        <p>All surveillance footage, access logs, sensor data, and threat reports generated by ZENTRA AI systems are classified as Confidential Client Data. This data is encrypted in transit and at rest using military-grade AES-256 encryption protocols. Surveillance data is stored on dedicated, air-gapped local servers and/or encrypted cloud infrastructure with SOC 2 Type II compliance. Under no circumstances is client surveillance data sold, shared, licensed, or made accessible to third parties — including marketing firms, data brokers, or analytics companies.</p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold text-xs uppercase tracking-wide mb-2">3. Florida State Compliance</h5>
+                        <p>ZENTRA AI operates in full compliance with the Florida Information Protection Act (FIPA), Florida Statutes §501.171, and all applicable state and federal regulations governing electronic security systems, surveillance data, and consumer privacy. Our low-voltage contracting operations are licensed under the State of Florida Department of Business and Professional Regulation (DBPR). All installations adhere to the National Electrical Code (NEC) and local building authority requirements.</p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold text-xs uppercase tracking-wide mb-2">4. Non-Disclosure Agreements</h5>
+                        <p>Every client engagement is protected by a binding Non-Disclosure Agreement (NDA) executed prior to any site survey, system design, or installation work. This NDA covers all proprietary information including but not limited to: property layouts, security system architecture, camera placement maps, access control configurations, network infrastructure details, and threat assessment reports. ZENTRA AI employees and subcontractors are bound by confidentiality agreements as a condition of engagement.</p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold text-xs uppercase tracking-wide mb-2">5. Data Retention & Destruction</h5>
+                        <p>Client surveillance data is retained for periods agreed upon in individual service contracts, typically ranging from 30 to 180 days depending on system configuration and client requirements. Upon contract termination or client request, all data is permanently destroyed using Department of Defense (DoD) 5220.22-M standard data sanitization methods. Certificates of destruction are provided upon request.</p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold text-xs uppercase tracking-wide mb-2">6. Breach Notification</h5>
+                        <p>In the unlikely event of a data breach affecting client information, ZENTRA AI will notify affected clients within 24 hours of confirmed discovery, in compliance with FIPA requirements. Our incident response team maintains documented breach response protocols, including forensic investigation, containment, client notification, and regulatory reporting procedures.</p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold text-xs uppercase tracking-wide mb-2">7. Your Rights</h5>
+                        <p>Clients and website visitors have the right to: (a) request access to personal data held by ZENTRA AI; (b) request correction of inaccurate data; (c) request deletion of personal data, subject to contractual and legal retention requirements; (d) opt out of marketing communications at any time. To exercise these rights, contact our Data Protection Officer through the secure contact form above or by requesting a direct line through our consultation process.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5">
+                        <p class="text-gray-600 text-[10px]">This policy was last updated on March 24, 2026. ZENTRA AI reserves the right to modify this policy at any time. Material changes will be communicated to active clients directly. This policy applies to all ZENTRA AI websites, services, and client engagements within the United States.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-semibold tracking-[0.2em] uppercase text-gray-700">
+                <span>&copy; 2026 ZENTRA AI Group. All Rights Reserved.</span>
+                <span>Miami, Florida · United States</span>
+                <span>Designed with Precision</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- JAVASCRIPT -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <script>
+        // Navbar background on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.style.background = 'rgba(5, 5, 5, 0.9)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+            } else {
+                navbar.style.background = 'transparent';
+                navbar.style.backdropFilter = 'none';
+                navbar.style.borderBottom = 'none';
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form select styling
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', function() {
+                this.style.color = '#fff';
+            });
+        });
+    </script>
+
+</body>
+</html>
